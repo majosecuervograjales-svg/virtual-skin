@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIRTUAL SKIN</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="dashboard">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">✦</div>
+      <div>
+        <h1>VIRTUAL <span>SKIN</span></h1>
+        <p>AUTONOMOUS SPACEFLIGHT HEALTH SYSTEM</p>
+      </div>
+    </div>
+    <div class="mission">
+      <span class="online">● SYSTEM ONLINE</span>
+      <span>MISSION: DEEP SPACE 01</span>
+      <span id="clock"></span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">ASTRONAUT HEALTH OVERVIEW</p>
+      <h2>Physiological Monitoring</h2>
+      <p>Autonomous health monitoring and decision support.</p>
+    </div>
+    <div class="mode">SIMULATION MODE</div>
+  </section>
+
+  <section id="statusPanel" class="status stable">
+    <div>
+      <p class="eyebrow">CURRENT HEALTH STATUS</p>
+      <h2 id="statusTitle">STABLE</h2>
+      <p id="statusDescription">
+        Parameters within configured simulation ranges.
+      </p>
+    </div>
+    <div class="status-icon" id="statusIcon">✓</div>
+  </section>
+
+  <section class="metrics">
+    <article class="metric">
+      <div class="metric-head">
+        <span>♥ HEART RATE</span>
+        <span class="dot"></span>
+      </div>
+      <div class="value">
+        <strong id="heartRate">76</strong><small>BPM</small>
+      </div>
+      <p>Simulated cardiac activity</p>
+      <div class="bar"><div id="heartBar"></div></div>
+    </article>
+
+    <article class="metric">
+      <div class="metric-head">
+        <span>◉ OXYGEN SATURATION</span>
+        <span class="dot"></span>
+      </div>
+      <div class="value">
+        <strong id="spo2">98</strong><small>%</small>
+      </div>
+      <p>Simulated peripheral SpO₂</p>
+      <div class="bar"><div id="oxygenBar"></div></div>
+    </article>
+
+    <article class="metric">
+      <div class="metric-head">
+        <span>〰 RESPIRATORY RATE</span>
+        <span class="dot"></span>
+      </div>
+      <div class="value">
+        <strong id="respiration">16</strong><small>RPM</small>
+      </div>
+      <p>Simulated breathing frequency</p>
+      <div class="bar"><div id="respBar"></div></div>
+    </article>
+  </section>
+
+  <section class="content-grid">
+    <article class="panel chart-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">PHYSIOLOGICAL ANALYTICS</p>
+          <h3>Heart Rate Telemetry</h3>
+        </div>
+        <span class="tag">LIVE SIMULATION</span>
+      </div>
+      <canvas id="heartChart"></canvas>
+      <div class="chart-footer">
+        <span id="averageHR">Average: -- BPM</span>
+        <span id="trendHR">Trend: Collecting data</span>
+      </div>
+    </article>
+
+    <article class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">AUTONOMOUS ASSISTANCE</p>
+          <h3>VIRTUAL SKIN</h3>
+        </div>
+      </div>
+      <div class="care-icon">✧</div>
+      <h3 id="careTitle">Monitoring active</h3>
+      <p id="careText">
+        VIRTUAL SKIN is monitoring simulated physiological parameters.
+      </p>
+      <div class="care-note">
+        Research prototype. Not a medical diagnosis system.
+      </div>
+    </article>
+  </section>
+
+  <section class="content-grid">
+    <article class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">EVENT HISTORY</p>
+          <h3>System Event Log</h3>
+        </div>
+      </div>
+      <div id="eventLog" class="event-log"></div>
+    </article>
+
+    <article class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">TEST ENVIRONMENT</p>
+          <h3>Scenario Simulator</h3>
+        </div>
+      </div>
+      <p class="scenario-description">
+        Select a scenario to test VIRTUAL SKIN's response.
+      </p>
+      <div class="buttons">
+        <button onclick="setScenario('stable')">✓ Stable</button>
+        <button onclick="setScenario('warning')">⚠ Warning</button>
+        <button onclick="setScenario('emergency')">🚨 Emergency</button>
+        <button onclick="setScenario('recovery')">↻ Recovery</button>
+      </div>
+    </article>
+  </section>
+
+  <footer>
+    VIRTUAL SKIN © 2026 | NASA SPACE APPS CHALLENGE |
+    RESEARCH PROTOTYPE | SIMULATED DATA
+  </footer>
+</div>
+  <script src="https://unpkg.com/mqtt@5/dist/mqtt.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
